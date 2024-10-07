@@ -1,4 +1,5 @@
-# Linear Search and Binary search
+### Date : 
+# Ex-7 : Linear Search and Binary search
 ## Aim:
 To write a program to perform linear search and binary search using python programming.
 ## Equipment’s required:
@@ -17,31 +18,89 @@ To write a program to perform linear search and binary search using python progr
 5.	Else, compare x with the middle element of the elements on the left side of mid. This is done by setting high to high = mid - 1.
 6.	Repeat steps 2 to 5 until low meets high
 ## Program:
+Program to find the square root for the given number(newton's method) using function.</br>
+Developed by: Suriya Pravin M</br>
+RegisterNumber : 212223230223</br></br>
 i)	#Use a linear search method to match the item in a list.
 ```
-
+def search(array,key,n):
+    for i in range(0,n):
+        if key==array[i]:
+            return i
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+n=len(array)
+print(array)
+result=search(array,key,n)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
 
-
+def binary(array,key,low,high):
+    while(low<=high):
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            low=mid+1
+        elif array[mid]>key:
+            high=mid-1
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found ")
+else:
+    print("Element found at index: ",result)
 
 
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
+def binary(array,key,low,high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            return binary(array,key,mid+1,high)
+        elif array[mid]>key:
+            return binary(array,key,low,mid-1)
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 
 
 
 ```
 ## Sample Input and Output
+![1)](https://github.com/user-attachments/assets/6154acac-93ec-4dd0-9025-c554f74b968f)
 
+![2)](https://github.com/user-attachments/assets/1236df40-a89c-4787-91fd-031f710da6a9)
 
+![3)](https://github.com/user-attachments/assets/e7d0f7fd-1576-4720-bf0f-0e035cbf0fe5)
 
 
 
